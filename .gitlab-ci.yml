@@ -1,0 +1,22 @@
+stages:
+  - change
+
+variables:
+  GIT_STRATEGY: none
+
+change:
+  stage: change
+  script:
+  - cd /home/gitlab-runner/pdf-export
+#   - git clone ssh://git@192.168.63.86:2222/root/pdf-export.git
+  - sudo git pull origin master --no-commit
+  - sudo git merge --message="updated"
+ # - docker build -t sso:1.0 .
+#  - docker run -d -p --name sso 8008:8000 sso:1.0 
+  - docker-compose down
+  - docker-compose up -d
+  - docker cp -a /home/gitlab-runner/pdf-export/web/font/Farsi_numerals_\(Non\ Standard\) php-apache:/var/www/html/vendor/mpdf/mpdf/ttfonts
+  - docker cp /home/gitlab-runner/pdf-export/FontVariables.php php-apache:/var/www/html/vendor/mpdf/mpdf/src/Config/FontVariables.php
+  only:
+  - master
+

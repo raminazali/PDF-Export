@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  php-apache:
+    image: geerlingguy/php-apache:latest
+
+    container_name: php-apache
+    ports:
+      - "80:80"
+    restart: always
+    working_dir: /var/www/html
+    volumes:
+      - "/home/gitlab-runner/pdf-export/web:/var/www/html"
+     # - "/home/gitlab-runner/pdf-export/FontVariables.php:/var/www/html/vendor/mpdf/mpdf/src/Config/FontVariables.php:ro"
+      #- "/home/gitlab-runner/pdf-export/web/font/Farsi_numerals_(Non Standard):/var/www/html/vendor/mpdf/mpdf/ttfonts"
+      #- "/home/gitlab-runner/pdf-export/php.ini:/etc/php/7.4/apache2/php.ini"
+      # - "/home/gitlab-runner/pdf-export/default.conf:/etc/apache2/default.conf"
+
+    command: ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+    command: ["composer", "up"]
+    command: ["mkdir", "tmp"]
+    command: ["chmod", "-R", "777", "tmp"]

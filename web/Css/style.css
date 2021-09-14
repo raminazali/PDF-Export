@@ -1,0 +1,30 @@
+.header{
+    width:125%;
+    position: fixed;
+    top: -40px;
+    left: -80px;
+}
+
+.footer{
+    width:118%;
+    margin-top:8px !important;
+    position: fixed;
+    bottom:-40px;
+    left: -59px;
+    right: -46px;
+}
+.h2 {
+    text-align:right;
+}
+.p{
+    text-align:justify;
+}
+
+.date-paragraph {
+    position: fixed;
+    top: -20px;
+    left: 0;
+}
+.headerTableTD td{
+    width: 30%;
+}

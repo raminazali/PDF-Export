@@ -1,0 +1,6 @@
+"iransans" => [
+    'R' => "IRANSans(FaNum)_Medium.ttf",
+    'B' => "IRANSans(FaNum)_Bold.ttf",
+    'useOTL' => 0xFF,
+    'useKashida' => 75,
+],
