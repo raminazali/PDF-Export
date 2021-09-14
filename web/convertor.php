@@ -1,6 +1,7 @@
 <?php
 ob_end_flush();
 use Mpdf\Mpdf;
+// Type is something is Used In Pdf (we have row the name of Type in Pdf)
 function LibraryPdf($title , $body, $type = null, $confirmDate= null , $number= null){
 require_once __DIR__ . '/vendor/autoload.php';
 
