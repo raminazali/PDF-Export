@@ -15,7 +15,7 @@ require_once __DIR__ . '/vendor/autoload.php';
     ]);
 
     // Set Water Mark Image to our Pdf ---------------------------------------------------------------------------------
-    $mpdf -> SetWatermarkImage("images/print-watermark.png", 1);
+    $mpdf -> SetWatermarkImage("imageurl.png", 1);
     $mpdf->showWatermarkImage = true;
     
     // set date happens Here -------------------------------------------------------------------------------------------
